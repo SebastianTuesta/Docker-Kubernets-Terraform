@@ -7,11 +7,11 @@
     make up
 
 3. Kubernets
-    ![Kubernets](kubernet/kubernets.jpg)
+    ![Kubernets](kubernets/kubernets.jpg)
 
-    minikube start
-    minikube -p minikube docker-env --shell powershell | Invoke-Expression
-    minikube tunnel (in other window)
-    cd make/Kubernets
-    make postgres
-    make api-service
+    * minikube start
+    * minikube -p minikube docker-env --shell powershell | Invoke-Expression
+    * minikube tunnel (in other window)
+    * cd make/Kubernets
+    * make postgres
+    * make api-service
