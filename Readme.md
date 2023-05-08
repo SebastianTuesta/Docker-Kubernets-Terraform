@@ -1,10 +1,10 @@
 1. Docker
-    cd make
-    make make/build
+    * cd make/docker
+    * make build_run
 
 2. Docker compose
-    cd make/docker_compose
-    make up
+    * cd make/docker_compose
+    * make up
 
 3. Kubernets
     ![Kubernets](kubernets/kubernets.jpg)
@@ -15,3 +15,10 @@
     * cd make/Kubernets
     * make postgres
     * make api-service
+
+4. Terraform
+    * cd terraform
+    * terraform init
+    * terraform validate
+    * terraform plan -var-file="dev.tfvars"
+    * terraform apply -var-file="dev.tfvars" --auto-approve

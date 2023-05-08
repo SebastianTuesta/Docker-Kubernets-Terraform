@@ -11,4 +11,5 @@ RUN apt-get update \
 
 RUN pip install -r requirements.txt && pip install gunicorn
 
+RUN chmod +x /runserver.sh
 ENTRYPOINT ["/runserver.sh"]

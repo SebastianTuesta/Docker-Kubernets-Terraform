@@ -1,0 +1,3 @@
+terraform/*.json
+terraform/.terraform*
+terraform/terraform*
