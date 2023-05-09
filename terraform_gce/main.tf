@@ -15,7 +15,7 @@ resource "google_compute_firewall" "allow-http-ssh" {
   network                 = google_compute_network.vpc_network.name
   allow {
     protocol              = "tcp"
-    ports                 = ["80", "22"]
+    ports                 = ["80", "22", "8000"]
   }
   source_ranges           = ["0.0.0.0/0"]
   target_tags             = ["allow-http-ssh"]
@@ -37,7 +37,12 @@ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/dock
 sudo yum install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo systemctl start docker
 
+sudo echo "Make"
+sudo yum -y install make
+
+
 sudo echo "Download Git"
+sudo yum -y install git
 sudo git clone https://github.com/SebastianTuesta/Docker-Kubernets-Terraform.git
 cd Docker-Kubernets-Terraform/make/docker
 sudo rm build_run
@@ -59,4 +64,9 @@ exit 0
     access_config {
     }
   }
+}
+
+output "instance_ip_addr" {
+  value       = google_compute_instance.vm_instance.network_interface.0.access_config.0.nat_ip
+  description = "The public IP address of the main server instance."
 }

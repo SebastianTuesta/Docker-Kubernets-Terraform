@@ -1,3 +1,6 @@
-terraform/*.json
-terraform/.terraform*
-terraform/terraform*
+terraform_gke/*.json
+terraform_gke/.terraform*
+terraform_gke/terraform*
+terraform_gce/*.json
+terraform_gce/.terraform*
+terraform_gce/terraform*
